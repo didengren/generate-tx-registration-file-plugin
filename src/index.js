@@ -2,11 +2,8 @@ require("polyfill-object.fromentries");
 
 const fs = require("fs");
 
-function GenerateTXRegistrationFilePlugin(
-  path = process.cwd() + "/CubeModule.json",
-  options = {}
-) {
-  this.path = path;
+function GenerateTXRegistrationFilePlugin(path, options = {}) {
+  this.path = path || process.cwd() + "/CubeModule.json";
   this.options = Object.assign(
     {},
     GenerateTXRegistrationFilePlugin.globOptions,
