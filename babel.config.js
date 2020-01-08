@@ -15,7 +15,6 @@ module.exports = (api) => {
           useBuiltIns: "usage"
         }
       ]
-    ],
-    plugins: ["transform-object-from-entries"]
+    ]
   };
 };

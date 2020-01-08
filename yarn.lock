@@ -1094,11 +1094,6 @@ babel-plugin-dynamic-import-node@^2.3.0:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-transform-object-from-entries@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.npmjs.org/babel-plugin-transform-object-from-entries/-/babel-plugin-transform-object-from-entries-1.0.0.tgz#34dbf40222af3c589f117292382f1e7d4c9f95ee"
-  integrity sha512-RK7YkW9sGe26TdxfZcXjytrD98D7PS0re0U/Vf9RQQEwjziVjC0ALHqFWUZCvy1xsmIfc89RlKqh0Or8+8LpCA==
-
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
@@ -3773,6 +3768,11 @@ please-upgrade-node@^3.1.1, please-upgrade-node@^3.2.0:
   integrity sha512-gQR3WpIgNIKwBMVLkpMUeR3e1/E1y42bqDQZfql+kDeXd8COYfM8PQA4X6y7a8u9Ua9FHmsrrmirW2vHs45hWg==
   dependencies:
     semver-compare "^1.0.0"
+
+polyfill-object.fromentries@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/polyfill-object.fromentries/-/polyfill-object.fromentries-1.0.1.tgz#1a5d89e3777684a852c9b6a6a1d2c3f9c262fc86"
+  integrity sha512-zlEL/n2S73hX7BQXIPapzirQw4yM/VC7slrcOyfbsH0ZyUQ/lLh4NF9wshSJ354v0F3KDMC8FCxeTQ7UUPpu9g==
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

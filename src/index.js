@@ -1,3 +1,5 @@
+require("polyfill-object.fromentries");
+
 const fs = require("fs");
 
 function GenerateTXRegistrationFilePlugin(
