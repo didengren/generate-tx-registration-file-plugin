@@ -3,7 +3,7 @@ require("polyfill-object.fromentries");
 const fs = require("fs");
 
 function GenerateTXRegistrationFilePlugin(
-  path = "/CubeModule.json",
+  path = process.cwd() + "/CubeModule.json",
   options = {}
 ) {
   this.path = path;
@@ -49,8 +49,9 @@ GenerateTXRegistrationFilePlugin.prototype = {
     _this.onBeforeRun(
       compiler,
       "generate-tx-registration-file-plugin",
-      function() {
+      function(compiler, cb) {
         _this.init();
+        cb && cb();
       }
     );
   },
@@ -63,11 +64,12 @@ GenerateTXRegistrationFilePlugin.prototype = {
   init() {
     const that = this;
     try {
-      const data = GenerateTXRegistrationFilePlugin.dataMatch(that.options);
+      const dataJson = GenerateTXRegistrationFilePlugin.dataMatch(that.options);
+      const dataString = JSON.stringify(dataJson, null, 2);
       fs.open(that.path, "r+", (err) => {
         if (err && err.code === "ENOENT")
-          that.createFileAndWrite(that.path, data);
-        else that.writeInFile(that.path, data);
+          that.createFileAndWrite(that.path, dataString);
+        else that.writeInFile(that.path, dataString);
       });
     } catch (error) {
       console.error("generate-tx-registration-file-plugin:\n", error);

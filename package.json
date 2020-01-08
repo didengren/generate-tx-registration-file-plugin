@@ -48,7 +48,6 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",
     "polyfill-object.fromentries": "^1.0.1",
     "webpack": "^4.41.5"
   }
