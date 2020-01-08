@@ -3,7 +3,7 @@ require("polyfill-object.fromentries");
 const fs = require("fs");
 
 function GenerateTXRegistrationFilePlugin(path, options = {}) {
-  this.path = path || process.cwd() + "/CubeModule.json";
+  this.path = path || process.cwd() + "/dist/CubeModule.json";
   this.options = Object.assign(
     {},
     GenerateTXRegistrationFilePlugin.globOptions,
@@ -43,19 +43,18 @@ GenerateTXRegistrationFilePlugin.writeSync = function(path, data, cb) {
 GenerateTXRegistrationFilePlugin.prototype = {
   apply(compiler) {
     const _this = this;
-    _this.onBeforeRun(
-      compiler,
-      "generate-tx-registration-file-plugin",
-      function(compiler, cb) {
-        _this.init();
-        cb && cb();
-      }
-    );
+    _this.onEmit(compiler, "generate-tx-registration-file-plugin", function(
+      compilation,
+      cb
+    ) {
+      _this.init();
+      cb();
+    });
   },
 
-  onBeforeRun(compiler, name, hook) {
-    if (compiler.hooks) compiler.hooks.beforeRun.tapAsync(name, hook);
-    else compiler.plugin("before-run", hook);
+  onEmit(compiler, name, hook) {
+    if (compiler.hooks) compiler.hooks.emit.tapAsync(name, hook);
+    else compiler.plugin("emit", hook);
   },
 
   init() {

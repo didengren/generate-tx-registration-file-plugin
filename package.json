@@ -50,5 +50,9 @@
   "dependencies": {
     "polyfill-object.fromentries": "^1.0.1",
     "webpack": "^4.41.5"
-  }
+  },
+  "keywords": [
+    "webpack",
+    "plugin"
+  ]
 }
