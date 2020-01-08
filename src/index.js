@@ -10,7 +10,6 @@ function GenerateTXRegistrationFilePlugin(
     GenerateTXRegistrationFilePlugin.globOptions,
     options
   );
-  this.init();
 }
 
 GenerateTXRegistrationFilePlugin.globOptions = {
@@ -43,6 +42,22 @@ GenerateTXRegistrationFilePlugin.writeSync = function(path, data, cb) {
 };
 
 GenerateTXRegistrationFilePlugin.prototype = {
+  apply(compiler) {
+    const _this = this;
+    _this.onBeforeRun(
+      compiler,
+      "generate-tx-registration-file-plugin",
+      function() {
+        _this.init();
+      }
+    );
+  },
+
+  onBeforeRun(compiler, name, hook) {
+    if (compiler.hooks) compiler.hooks.beforeRun.tapAsync(name, hook);
+    else compiler.plugin("before-run", hook);
+  },
+
   init() {
     const that = this;
     try {
