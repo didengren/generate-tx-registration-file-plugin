@@ -1,6 +1,6 @@
 {
   "name": "@trinasolar/generate-tx-registration-file-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "生成天信平台注册json文件的插件",
   "main": "src/index.js",
   "scripts": {
