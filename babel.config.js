@@ -8,15 +8,14 @@ module.exports = (api) => {
       [
         "@babel/preset-env",
         {
-          modules: false,
+          targets: {
+            // node: "10.15.3",
+            esmodules: true
+          },
           useBuiltIns: "usage"
         }
-        // {
-        //   targets: {
-        //     node: '10.15.3',
-        //   },
-        // }
       ]
-    ]
+    ],
+    plugins: ["transform-object-from-entries"]
   };
 };

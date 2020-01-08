@@ -1094,6 +1094,11 @@ babel-plugin-dynamic-import-node@^2.3.0:
   dependencies:
     object.assign "^4.1.0"
 
+babel-plugin-transform-object-from-entries@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/babel-plugin-transform-object-from-entries/-/babel-plugin-transform-object-from-entries-1.0.0.tgz#34dbf40222af3c589f117292382f1e7d4c9f95ee"
+  integrity sha512-RK7YkW9sGe26TdxfZcXjytrD98D7PS0re0U/Vf9RQQEwjziVjC0ALHqFWUZCvy1xsmIfc89RlKqh0Or8+8LpCA==
+
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
