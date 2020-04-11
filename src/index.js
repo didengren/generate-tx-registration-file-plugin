@@ -2,6 +2,10 @@ require("polyfill-object.fromentries");
 
 const fs = require("fs");
 
+const path = require("path");
+
+const { mkdirsSync } = require("./mkdir");
+
 function GenerateTXRegistrationFilePlugin(
   outputDir = "dist",
   path,
@@ -76,8 +80,9 @@ GenerateTXRegistrationFilePlugin.prototype = {
     }
   },
 
-  createFileAndWrite(path, data) {
-    GenerateTXRegistrationFilePlugin.writeSync(path, data, function() {
+  createFileAndWrite(_path, data) {
+    mkdirsSync(path.dirname(_path));
+    GenerateTXRegistrationFilePlugin.writeSync(_path, data, function() {
       console.log("天信平台项目注册json文件创建成功");
     });
   },
