@@ -83,14 +83,14 @@ GenerateTXRegistrationFilePlugin.prototype = {
   createFileAndWrite(_path, data) {
     mkdirsSync(path.dirname(_path));
     GenerateTXRegistrationFilePlugin.writeSync(_path, data, function() {
-      console.log("天信平台项目注册json文件创建成功");
+      console.log("平台项目注册json文件创建成功");
     });
   },
 
   writeInFile(path, data) {
     // const oldData = fs.readFileSync(path, "utf-8");
     GenerateTXRegistrationFilePlugin.writeSync(path, data, function() {
-      console.log("天信平台项目注册json文件覆盖成功");
+      console.log("平台项目注册json文件覆盖成功");
     });
   }
 };
